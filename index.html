@@ -2,6 +2,7 @@
 <html lang="en-US">
 
 <head>
+    
     <meta name="generator" content="React Static" />
     <meta charSet="utf-8" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -13,6 +14,115 @@
     <meta name="og:type" content="profile" />
     <meta name="og:description" content="See selected projects by Addison"/>
     <meta name="description" content="Selected projects and writing" />
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .project {
+            padding: 20px;
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .project:hover {
+            transform: scale(1.05);
+        }
+
+        /* Fullscreen Carousel */
+        .carousel {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .carousel.active {
+            display: flex;
+        }
+
+        .carousel img {
+            max-width: 100%;
+            max-height: 80%;
+            display: none;
+        }
+
+        .carousel img.active {
+            display: block;
+        }
+
+        .caption {
+            color: white;
+            margin-top: 10px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            font-size: 36px;
+            font-weight: bold;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            z-index: 10;
+        }
+
+        .arrow:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .arrow-left {
+            left: 20px;
+        }
+
+        .arrow-right {
+            right: 20px;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+        }
+
+        .close:hover {
+            background: rgba(255, 0, 0, 0.7);
+        }
+    </style>
+</head>
     <link rel="preload" as="script" href="/templates/vendors~__react_static_root__/src/pages/index.a9028d32.js" />
     <link rel="preload" as="script" href="/templates/__react_static_root__/src/pages/index.cac318c0.js" />
     <link rel="preload" as="script" href="/templates/vendors~main.47b58afb.js" />
@@ -298,7 +408,7 @@
                                             <dd class="sc-kstqJO lFJNX">
                                                 <p class="sc-fodVek iWHCcf">B.A. in Computer Science</p>
                                                 <br>
-                                                <p class="sc-fodVek iWHCcf" >  <h style="text-decoration: underline; "> Activities: Varsity Overwatch <br> </h> Demonstrated strategic thinking, leadership, and resilience under pressure. Led JV team to an undefeated season (Spring 2023) and contributed to Varsity achieving the highest ranking in the program's 8-year history (Spring 2024).</h></p>
+                                                <p class="sc-fodVek iWHCcf" >  <h style="text-decoration: underline; "> Activities: Varsity Overwatch <br> </h>  Undefeated JV season (Spring 2023), achieved Varsity's highest ranking (Top 15% of Collegiate Teams) in program's 8-year history (Spring 2024). Demonstrated strategic thinking, leadership, and resilience under pressure.</h></p>
                                             </dd>
                                         </div>
                                     </dl>
@@ -321,6 +431,96 @@
                             </section>
                             <section class="sc-fubCzh sc-pGacB bCEkxV EpVDd">
                                 <h2 class="sc-iBPTik kbbROJ">projects</h2>
+                            
+                                <div id="carousel-0" class="carousel">
+                                    <img src="rg1.png" alt="Project 1 Image 1" class="active">
+                                    <img src="rg2.png" alt="Project 1 Image 2">
+                                    <img src="rg3.png" alt="Project 1 Image 3">
+                                    <img src="rg4.png" alt="Project 1 Image 4">
+                                    <img src="rg5.png" alt="Project 1 Image 5">
+                                    <img src="rg6.png" alt="Project 1 Image 6">
+                                    <img src="rg7.png" alt="Project 1 Image 7">
+                                    <div class="caption">RGBAttack</div>
+                                    <button class="arrow arrow-left" onclick="prevSlide(0)">&#10094;</button>
+                                    <button class="arrow arrow-right" onclick="nextSlide(0)">&#10095;</button>
+                                    <button class="close" onclick="closeCarousel(0)">&#10006;</button>
+                                </div>
+                            
+                                <div id="carousel-1" class="carousel">
+                                    <img src="rt1.png" alt="Project 2 Image 1" class="active">
+                                    <img src="rt2.png" alt="Project 2 Image 2">
+                                    <img src="rt3.png" alt="Project 2 Image 3">
+                                    <img src="rt4.png" alt="Project 2 Image 4">
+                                    <img src="rt5.png" alt="Project 2 Image 5">
+                                    <img src="rt6.png" alt="Project 2 Image 6">
+                                    <div class="caption">RankTool</div>
+                                    <button class="arrow arrow-left" onclick="prevSlide(1)">&#10094;</button>
+                                    <button class="arrow arrow-right" onclick="nextSlide(1)">&#10095;</button>
+                                    <button class="close" onclick="closeCarousel(1)">&#10006;</button>
+                                </div>
+                            
+                                <div id="carousel-2" class="carousel">
+                                    <img src="mac.jpg" alt="Implant Entity Relationship Diagram" class="active">
+                                    <div class="caption">Mac-attack ER Diagram</div>
+                                    <button class="arrow arrow-left" onclick="prevSlide(2)">&#10094;</button>
+                                    <button class="arrow arrow-right" onclick="nextSlide(2)">&#10095;</button>
+                                    <button class="close" onclick="closeCarousel(2)">&#10006;</button>
+                                </div>
+                            
+                                <script>
+                                    const carousels = document.querySelectorAll('.carousel');
+                                    const captions = [
+                                        [
+                                            "First Step of a Search",
+                                            "Immediate search results include found images of the target, and image metadata",
+                                            "Connected nodes represent faces found from images where target is discovered",
+                                            "After selecting a face that target was found with, we recursively search to find more info about this connection to the target.",
+                                            "Graph State After Several Searches",
+                                            "To export our findings, we programmatically create a .xlsx sheet that includes data on the searches, including the relationships between the searches, the sites where the images were found, metadata on the images, and notes on the searches.",
+                                            "About Page"
+                                        ],
+                                        [
+                                            "Website Search Screen",
+                                            "Website Search Results",
+                                            "CLI Tool Image 1",
+                                            "CLI Tool Image 2",
+                                            "CLI Tool Image 3",
+                                            "CLI Tool Image 4",
+                                        ],
+                                        [
+                                            "Full Functionality of the Command and Control Implant and Server",
+                                        ]
+                                    ];
+                                    function openCarousel(index) {
+                                        carousels[index].classList.add('active');
+                                    }
+                            
+                                    function closeCarousel(index) {
+                                        carousels[index].classList.remove('active');
+                                    }
+                            
+                                    function showSlide(carouselIndex, slideIndex) {
+                                        const images = carousels[carouselIndex].querySelectorAll('img');
+                                        const caption = carousels[carouselIndex].querySelector('.caption');
+                                        images.forEach((img, i) => img.classList.remove('active'));
+                                        images[slideIndex].classList.add('active');
+                                        caption.textContent = captions[carouselIndex][slideIndex];
+                                    }
+
+                                    function nextSlide(index) {
+                                        const images = carousels[index].querySelectorAll('img');
+                                        const currentIndex = Array.from(images).findIndex(img => img.classList.contains('active'));
+                                        const nextIndex = (currentIndex + 1) % images.length;
+                                        showSlide(index, nextIndex);
+                                    }
+
+                                    function prevSlide(index) {
+                                        const images = carousels[index].querySelectorAll('img');
+                                        const currentIndex = Array.from(images).findIndex(img => img.classList.contains('active'));
+                                        const prevIndex = (currentIndex - 1 + images.length) % images.length;
+                                        showSlide(index, prevIndex);
+                                    }
+                                </script>
                                 <div class="sc-jrAFXE gONRvE">
                                     <dl class="sc-crrszt hOpRgx">
                                         
@@ -341,6 +541,8 @@
                                                 </p>
                                             </dd>
                                         </div>  
+                                        <div class="project" onclick="openCarousel(0)">RGBAttack Images</div>
+
                                         <div class="sc-dQoVA jHwfCx">
                                             <dt class="sc-bqyKOL llzRjw"><strong><a href="https://googlegooglegoogle.com">RankTool</a></strong> <a href="https://github.com/addycb/ranktool">CLI Version</a></strong> <a>Game Tourney Tool</a>
                                                 <div class="sc-hBEYId liFXwB"> <!-- --></div>
@@ -354,6 +556,27 @@
                                                     <br><br>
                                                     Note: The first search may timeout while the Lambda function warms up. Subsequent searches will be faster. The CLI version has no spinup time.
                                         </div>  
+                                        <div class="project" onclick="openCarousel(1)">RankTool Images</div>
+                                        
+                                        <div class="sc-dQoVA jHwfCx">
+                                            <dt class="sc-bqyKOL llzRjw"><strong><a href="https://github.com/Ingi-Hong/CS-501-C2">Mac-attack</a></strong> <a>Windows C2 Framework</a>
+                                                <div class="sc-hBEYId liFXwB"> <!-- --></div>
+                                            </dt>
+                                            <dd class="sc-kstqJO lFJNX">
+                                                <p class="sc-fodVek iWHCcf">To deepen understanding of Windows internals and security, developed a command and control (C2) server to simulate
+                                                    real-world security scenarios.
+                                                    <br><br>Implemented secure, encrypted client-server communication using C++ with Windows cryptography and networking
+                                                    APIs, ensuring robust data protection.
+                                                    <br><br>Designed and integrated a REST API with a Flask web server for centralized command execution and data retrieval.
+                                                    <br><br>Created detailed UML diagrams to document system architecture, data flow, and interaction between components,
+                                                    ensuring clarity and scalability for future development.
+                                                    <br><br>Authored comprehensive technical documentation to assist users and developers in deploying, maintaining, and
+                                                    extending the C2 server functionality. 
+                                                </p>
+                                            </dd>
+                                        </div>  
+                                        <div class="project" onclick="openCarousel(2)">Mac-attack Images</div>
+
                                     </dl>
                                 </div>
                             </section>
