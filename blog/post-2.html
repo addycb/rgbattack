@@ -526,6 +526,11 @@
                                 // Toggle the 'hidden' class to show/hide the menu
                                 dropdownMenu.classList.toggle('hidden');
                             });
+                            document.addEventListener('click', function (event) {
+                                if (!dropdownMenu.contains(event.target) && !hamburgerBtn.contains(event.target)) {
+                                    dropdownMenu.classList.add('hidden');
+                                }
+                            });
                         </script>
 
                         <main class="sc-eCstlR dHaRVu">

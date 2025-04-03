@@ -89,6 +89,7 @@
 <body>
     <div id="root">
         <div style="outline:none" tabindex="-1">
+
             <div class="sc-bdfBQB jEsShH">
                 <div style="outline:none" tabindex="-1">
                     <div class="sc-dlfnuX epXZcX">
@@ -127,6 +128,11 @@
                                 // Toggle the 'hidden' class to show/hide the menu
                                 dropdownMenu.classList.toggle('hidden');
                             });
+                            document.addEventListener('click', function (event) {
+                                if (!dropdownMenu.contains(event.target) && !hamburgerBtn.contains(event.target)) {
+                                    dropdownMenu.classList.add('hidden');
+                                }
+                            });
                         </script>
                         <script>
                             // Trigger confetti when the page loads
@@ -143,7 +149,7 @@
                         <main class="sc-eCstlR dHaRVu">
 
                             <article class="prose lg:prose-xl mx-auto p-6 bg-white shadow-md rounded-lg">
-                                <h1 class="text-4xl font-bold text-gray-900">Movement</h1>
+                                <h1 class="text-4xl font-bold text-gray-900">Welcome!</h1>
                                 <p class="text-gray-700 mt-4">
                                     My last semi-serious writing examined Chobits for an AI class. Before that, I reused
                                     someone's metaphor found on Erowid trip reports to get into college.
