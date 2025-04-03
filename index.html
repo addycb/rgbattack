@@ -491,6 +491,43 @@
             <div class="sc-bdfBQB jEsShH">
                 <div style="outline:none" tabindex="-1">
                     <div class="sc-dlfnuX epXZcX">
+                        <div class="relative inline-block text-left">
+                            <!-- Hamburger Button -->
+                            <button id="hamburger-btn" type="button"
+                                class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 shadow-xs ring-gray-300 ring-inset hover:bg-gray-50"
+                                aria-expanded="false" aria-haspopup="true">
+                                <!-- Hamburger Icon -->
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 12h18M3 6h18M3 18h18"></path>
+                                </svg>
+                            </button>
+
+                            <!-- Dropdown menu -->
+                            <div id="dropdown-menu"
+                                class="hidden absolute left-0 z-10 mt-2 w-56 origin-top-left rounded-md bg-white ring-1 shadow-lg ring-black/5 focus:outline-hidden"
+                                role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                                <div class="py-1" role="none">
+                                    <a href="/" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
+                                        tabindex="-1" id="menu-item-0">Home</a>
+                                    <a href="/blog" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
+                                        tabindex="-1" id="menu-item-1">Blog</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Add JavaScript to toggle the dropdown -->
+                        <script>
+                            const hamburgerBtn = document.getElementById('hamburger-btn');
+                            const dropdownMenu = document.getElementById('dropdown-menu');
+
+                            hamburgerBtn.addEventListener('click', function () {
+                                // Toggle the 'hidden' class to show/hide the menu
+                                dropdownMenu.classList.toggle('hidden');
+                            });
+                        </script>
+
                         <header class="sc-hKgJUU jqTETK">
                             <div class="container">
                                 <div class="left-column">
