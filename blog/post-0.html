@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+
+    <meta name="generator" content="React Static" />
+    <meta charSet="utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta name="author" content="Addy CB" />
+    <meta name="og:title" content="" />
+    <meta name="og:type" content="profile" />
+    <meta name="og:description" content="See selected projects by Addison" />
+    <meta name="description" content="Selected projects and writing" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+    </style>
+</head>
+
+<style data-styled="" data-styled-version="5.3.1">
+    * {
+        -webkit-scroll-behavior: smooth;
+        -moz-scroll-behavior: smooth;
+        -ms-scroll-behavior: smooth;
+        scroll-behavior: smooth;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: repeating-linear-gradient(to right,
+                #7fff7f,
+                #7fff7f 1px,
+                white 1px,
+                white 5px);
+    }
+
+    data-styled.g1[id="sc-global-KxBjy1"] {
+        content: "sc-global-KxBjy1,"
+    }
+
+    .jEsShH {
+        width: 100%;
+        height: 100%;
+    }
+
+    data-styled.g2[id="sc-bdfBQB"] {
+        content: "jEsShH,"
+    }
+
+    .epXZcX {
+        background-color: rgba(255, 255, 255, 0.77);
+        font-size: .8rem;
+        padding: 1rem;
+        max-width: 42rem;
+    }
+
+    @media screen and (min-width:50rem) {
+        .epXZcX {
+            padding: 5rem;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+    }
+
+    .epXZcX a {
+        color: #af2929;
+    }
+
+    .epXZcX a:hover {
+        color: #8b1212;
+    }
+
+    data-styled.g4[id="sc-dlfnuX"] {
+        content: "epXZcX,"
+    }
+</style>
+<link rel="icon" href="rgba4.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div id="root">
+        <div style="outline:none" tabindex="-1">
+            <div class="sc-bdfBQB jEsShH">
+                <div style="outline:none" tabindex="-1">
+                    <div class="sc-dlfnuX epXZcX">
+                        <div class="relative inline-block text-left">
+                            <!-- Hamburger Button -->
+                            <button id="hamburger-btn" type="button"
+                                class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 shadow-xs ring-gray-300 ring-inset hover:bg-gray-50"
+                                aria-expanded="false" aria-haspopup="true">
+                                <!-- Hamburger Icon -->
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 12h18M3 6h18M3 18h18"></path>
+                                </svg>
+                            </button>
+
+                            <!-- Dropdown menu -->
+                            <div id="dropdown-menu"
+                                class="hidden absolute left-0 z-10 mt-2 w-56 origin-top-left rounded-md bg-white ring-1 shadow-lg ring-black/5 focus:outline-hidden"
+                                role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                                <div class="py-1" role="none">
+                                    <a href="/" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
+                                        tabindex="-1" id="menu-item-0">Home</a>
+                                    <a href="/blog.html" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
+                                        tabindex="-1" id="menu-item-1">Blog</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Add JavaScript to toggle the dropdown -->
+                        <script>
+                            const hamburgerBtn = document.getElementById('hamburger-btn');
+                            const dropdownMenu = document.getElementById('dropdown-menu');
+
+                            hamburgerBtn.addEventListener('click', function () {
+                                // Toggle the 'hidden' class to show/hide the menu
+                                dropdownMenu.classList.toggle('hidden');
+                            });
+                        </script>
+                        <script>
+                            // Trigger confetti when the page loads
+                            window.addEventListener('load', function () {
+                                // Set up confetti animation
+                                confetti({
+                                    particleCount: 200, // Number of confetti particles
+                                    spread: 70,         // Spread of the confetti
+                                    origin: { x: 0.5, y: 0.5 }, // Confetti will originate from the center
+                                    colors: ['#ff0', '#f00', '#0f0', '#00f'] // Colors of the confetti
+                                });
+                            });
+                        </script>
+                        <main class="sc-eCstlR dHaRVu">
+
+                            <article class="prose lg:prose-xl mx-auto p-6 bg-white shadow-md rounded-lg">
+                                <h1 class="text-4xl font-bold text-gray-900">Movement</h1>
+                                <p class="text-gray-700 mt-4">
+                                    My last semi-serious writing examined Chobits for an AI class. Before that, I reused
+                                    someone's metaphor found on Erowid trip reports to get into college.
+                                </p>
+
+                                <h2 class="text-2xl font-semibold text-gray-800 mt-6">About Me</h2>
+                                <p class="text-gray-700 mt-2">
+                                    Hello to everyone that has stumbled across this page! I'm Addie, and this is my
+                                    website. So to my blog:
+                                </p>
+
+                                <blockquote id="birthday-message"
+                                    class="text-center border-l-4 border-gray-300 pl-4 italic text-gray-600 mt-4">
+                                    “Happy Birthday!”
+                                </blockquote>
+
+                                <p class="text-gray-700 mt-2">
+
+                                </p>
+
+                                <ul class="list-disc list-inside mt-4 text-gray-700">
+                                </ul>
+                            </article>
+                            <div class="flex justify-between items-center p-4 text-white border-box">
+                                <a href="/blog/post-0.html" class="px-4 py-2  rounded">&lt;</a>
+                                <a href="/blog.html" class="p-2  rounded-md flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M3 12l9-9 9 9M4.5 10.5V21h15V10.5" />
+                                    </svg>
+                                </a>
+                                <a href="/blog/post-1.html" class="px-4 py-2  rounded">></a>
+                            </div>
+                        </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+
+</html>
