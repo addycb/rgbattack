@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+
+    <meta name="generator" content="React Static" />
+    <meta charSet="utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta name="author" content="Addy CB" />
+    <meta name="og:title" content="" />
+    <meta name="og:type" content="profile" />
+    <meta name="og:description" content="See selected projects by Addison" />
+    <meta name="description" content="Selected projects and writing" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        /* General Styles */
+
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .project {
+            padding: 20px;
+            background: #f0f0f0;
+
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .project:hover {
+            transform: scale(1.05);
+        }
+
+        /* Fullscreen Carousel */
+        .carousel {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .carousel.active {
+            display: flex;
+        }
+
+        .carousel img {
+            max-width: 100%;
+            max-height: 80%;
+            display: none;
+        }
+
+        .carousel img.active {
+            display: block;
+        }
+
+        .caption {
+            color: white;
+            margin-top: 10px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            font-size: 36px;
+            font-weight: bold;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            z-index: 10;
+        }
+
+        .arrow:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .arrow-left {
+            left: 20px;
+        }
+
+        .arrow-right {
+            right: 20px;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+        }
+
+        .close:hover {
+            background: rgba(255, 0, 0, 0.7);
+        }
+    </style>
+</head>
+
+<style data-styled="" data-styled-version="5.3.1">
+    * {
+        -webkit-scroll-behavior: smooth;
+        -moz-scroll-behavior: smooth;
+        -ms-scroll-behavior: smooth;
+        scroll-behavior: smooth;
+        box-sizing: border-box;
+    }
+
+    /*!sc*/
+
+    input[type="text"] {
+        background: rgba(255, 255, 255, 0.8);
+        /* Semi-transparent background for textboxes */
+        border: 1px solid #ccc;
+        /* Optional border styling */
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: repeating-linear-gradient(to right,
+                #7fff7f,
+                #7fff7f 1px,
+                /* Green stripe of 2px */
+                white 1px,
+                /* White space starts right after green */
+                white 5px);
+        /* White space lasts until 10px */
+
+    }
+
+    /*!sc*/
+    data-styled.g1[id="sc-global-KxBjy1"] {
+        content: "sc-global-KxBjy1,"
+    }
+
+    /*!sc*/
+    .jEsShH {
+        width: 100%;
+        height: 100%;
+    }
+
+    /*!sc*/
+    data-styled.g2[id="sc-bdfBQB"] {
+        content: "jEsShH,"
+    }
+
+    /*!sc*/
+    .epXZcX {
+        background-color: rgba(255, 255, 255, 0.77);
+        font-size: .8rem;
+        padding: 1rem;
+        max-width: 42rem;
+    }
+
+    /*!sc*/
+    @media screen and (min-width:50rem) {
+        .epXZcX {
+            padding: 5rem;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+
+
+    }
+
+    /*!sc*/
+    .epXZcX a {
+        color: #af2929;
+    }
+
+    /*!sc*/
+    .epXZcX a:hover {
+        color: #8b1212;
+    }
+
+    /*!sc*/
+    data-styled.g4[id="sc-dlfnuX"] {
+        content: "epXZcX,"
+    }
+
+    /*!sc*/
+    .jqTETK {
+        margin-top: 2rem;
+        margin-bottom: 4.5rem;
+        text-align: right;
+    }
+
+    /*!sc*/
+    data-styled.g5[id="sc-hKgJUU"] {
+        content: "jqTETK,"
+    }
+
+    /*!sc*/
+    .iihQhs {
+        font-size: 1.2em;
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+
+    /*!sc*/
+    data-styled.g7[id="sc-jSgvzq"] {
+        content: "iihQhs,"
+    }
+
+    /*!sc*/
+    /*line*/
+    .cVGWcb {
+        border: 0;
+        border-top: 1px solid #d8d4d4;
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+    }
+
+    /*!sc*/
+    data-styled.g8[id="sc-gKseQn"] {
+        content: "cVGWcb,"
+    }
+
+    /*!sc*/
+    .kbbROJ {
+        font-size: 1.1rem;
+        margin-top: 0;
+        margin-bottom: 1em;
+    }
+
+    /*!sc*/
+    data-styled.g9[id="sc-iBPTik"] {
+        content: "kbbROJ,"
+    }
+
+    /*!sc*/
+    .bCEkxV {
+        margin-bottom: 0rem;
+    }
+
+    /*!sc*/
+    data-styled.g10[id="sc-fubCzh"] {
+        content: "bCEkxV,"
+    }
+
+    /*!sc*/
+    @media screen and (min-width:30rem) {
+        .EpVDd {
+            display: grid;
+            grid-template-columns: 10em 1fr;
+        }
+    }
+
+    /*!sc*/
+    data-styled.g11[id="sc-pGacB"] {
+        content: "EpVDd,"
+    }
+
+    /*!sc*/
+    .gONRvE {
+        max-width: 25em;
+        margin-left: 1rem;
+    }
+
+    /*!sc*/
+    .gONRvE>p:first-child {
+        margin-top: 0;
+    }
+
+    /*!sc*/
+    data-styled.g12[id="sc-jrAFXE"] {
+        content: "gONRvE,"
+    }
+
+    /*!sc*/
+    .hOpRgx {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    /*!sc*/
+    data-styled.g15[id="sc-crrszt"] {
+        content: "hOpRgx,"
+    }
+
+    /*!sc*/
+    .jHwfCx {
+        margin-bottom: 0rem;
+    }
+
+    /*!sc*/
+    data-styled.g16[id="sc-dQoVA"] {
+        content: "jHwfCx,"
+    }
+
+    /*!sc*/
+    .llzRjw {
+        width: 100%;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+
+    /*!sc*/
+    data-styled.g17[id="sc-bqyKOL"] {
+        content: "llzRjw,"
+    }
+
+    /*!sc*/
+    .lFJNX {
+        margin-left: 0;
+    }
+
+    /*!sc*/
+    .lFJNX p {
+        font-size: 1.1em;
+    }
+
+    /*!sc*/
+    data-styled.g18[id="sc-kstqJO"] {
+        content: "lFJNX,"
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        max-width: 42rem;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .left-column {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .favicon {
+        width: 7rem;
+        /* Adjust the size of the favicon */
+        height: 7rem;
+        /* Adjust the size of the favicon */
+        object-fit: contain;
+    }
+
+    .favicon-wrapper {
+        position: relative;
+    }
+
+
+
+
+    .favicon-wrapper::after {
+        content: '';
+        position: absolute;
+        top: 12%;
+        left: 12%;
+        width: 76%;
+        height: 76%;
+        background: rgba(255, 255, 255, 0.4);
+        /* Semi-transparent white overlay */
+        pointer-events: none;
+        /* Ensures it doesn't block clicks */
+        animation: snow 2.5s ease-in-out infinite;
+        /* Animation for the snow/fog effect */
+    }
+
+    @keyframes snow {
+        0% {
+            background: rgba(255, 255, 255, 0.0) url('https://www.transparenttextures.com/patterns/transparent-fog.png') repeat;
+        }
+
+        25% {
+            background: rgba(255, 255, 255, 0.0) url('https://www.transparenttextures.com/patterns/transparent-fog.png') repeat;
+        }
+
+        50% {
+
+            background: rgba(0, 239, 40, 0.25) url('https://www.transparenttextures.com/patterns/transparent-fog.png') repeat;
+        }
+
+        75% {
+            background: rgba(0, 239, 40, 0.0) url('https://www.transparenttextures.com/patterns/transparent-fog.png') repeat;
+        }
+
+        100% {
+            background: rgba(255, 255, 255, 0.0) url('https://www.transparenttextures.com/patterns/transparent-fog.png') repeat;
+        }
+
+
+
+    }
+
+    .right-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+
+    }
+
+    .contact-buttons {
+        display: flex;
+        flex-direction: row;
+        margin-left: 1rem;
+        align-items: right;
+        gap: 1.25rem;
+        /* Adjust the space between the buttons as needed */
+    }
+
+    .right-column h1 {
+        font-size: 1.07rem;
+        margin: 0;
+    }
+
+    .right-column a {
+        margin-top: 10px;
+        font-size: 1rem;
+        text-decoration: none;
+        color: red;
+    }
+
+    .right-column a:hover {
+        text-decoration: underline;
+    }
+
+    /*!sc*/
+    .liFXwB {
+        font-size: 0.9em;
+        color: #766b6b;
+        text-align: right;
+    }
+
+    /*!sc*/
+    data-styled.g19[id="sc-hBEYId"] {
+        content: "liFXwB,"
+    }
+
+    /*!sc*/
+    .iWHCcf {
+        line-height: 1.5;
+    }
+
+    /*!sc*/
+    data-styled.g20[id="sc-fodVek"] {
+        content: "iWHCcf,"
+    }
+
+    /*!sc*/
+</style>
+<link rel="icon" href="rgba4.ico" type="image/x-icon">
+</head>
+
+
+
+
+<body>
+    <div id="root">
+        <div style="outline:none" tabindex="-1">
+            <div class="sc-bdfBQB jEsShH">
+                <div style="outline:none" tabindex="-1">
+                    <div class="sc-dlfnuX epXZcX">
+                        <div class="relative inline-block text-left">
+                            <!-- Hamburger Button -->
+                            <button id="hamburger-btn" type="button"
+                                class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 shadow-xs ring-gray-300 ring-inset hover:bg-gray-50"
+                                aria-expanded="false" aria-haspopup="true">
+                                <!-- Hamburger Icon -->
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 12h18M3 6h18M3 18h18"></path>
+                                </svg>
+                            </button>
+
+                            <!-- Dropdown menu -->
+                            <div id="dropdown-menu"
+                                class="hidden absolute left-0 z-10 mt-2 w-56 origin-top-left rounded-md bg-white ring-1 shadow-lg ring-black/5 focus:outline-hidden"
+                                role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                                <div class="py-1" role="none">
+                                    <a href="/" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
+                                        tabindex="-1" id="menu-item-0">Home</a>
+                                    <a href="/blog.html" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
+                                        tabindex="-1" id="menu-item-1">Blog</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Add JavaScript to toggle the dropdown -->
+                        <script>
+                            const hamburgerBtn = document.getElementById('hamburger-btn');
+                            const dropdownMenu = document.getElementById('dropdown-menu');
+
+                            hamburgerBtn.addEventListener('click', function () {
+                                // Toggle the 'hidden' class to show/hide the menu
+                                dropdownMenu.classList.toggle('hidden');
+                            });
+                        </script>
+
+                        <main class="sc-eCstlR dHaRVu">
+                            <h1 class="text-3xl font-semibold text-center mb-8">Blog Entries</h1>
+                            <ul class="space-y-4">
+                                <li
+                                    class="p-4 bg-white rounded-lg shadow hover:bg-gray-100 transition-all duration-300">
+                                    <a href="/blog/post-5"
+                                        class="text-xl font-medium text-blue-600 hover:underline">RGBAttack</a>
+                                    <p class="text-gray-600 mt-2">On creating an OSINT tool using facial recognition --
+                                        Relationship Graph Based Attack</p>
+                                </li>
+                                <li
+                                    class="p-4 bg-white rounded-lg shadow hover:bg-gray-100 transition-all duration-300">
+                                    <a href="/blog/post-4"
+                                        class="text-xl font-medium text-blue-600 hover:underline">Ranktool</a>
+                                    <p class="text-gray-600 mt-2">Building a Game-Changer: How I Developed a Python Web
+                                        Application to Revolutionize Tournament Analysis for Collegiate Start.gg Teams
+                                    </p>
+                                </li>
+                                <li
+                                    class="p-4 bg-white rounded-lg shadow hover:bg-gray-100 transition-all duration-300">
+                                    <a href="/blog/post-3"
+                                        class="text-xl font-medium text-blue-600 hover:underline">Mac-Attack</a>
+                                    <p class="text-gray-600 mt-2">Learn how I built Mac-attack, a Windows C2 Framework
+                                        using C++, Flask, and encrypted communication for security testing.
+
+                                    </p>
+                                </li>
+                                <li
+                                    class="p-4 bg-white rounded-lg shadow hover:bg-gray-100 transition-all duration-300">
+                                    <a href="/blog/post-2"
+                                        class="text-xl font-medium text-blue-600 hover:underline">Passing the PNPT
+                                        Exam</a>
+                                    <p class="text-gray-600 mt-2">Sharing my journey of preparing for and passing the
+                                        Practical Network Penetration Tester exam.</p>
+                                </li>
+                                <li
+                                    class="p-4 bg-white rounded-lg shadow hover:bg-gray-100 transition-all duration-300">
+                                    <a href="/blog/post-1"
+                                        class="text-xl font-medium text-blue-600 hover:underline">Building Success</a>
+                                    <p class="text-gray-600 mt-2">Reflecting on my experience as a high-ranked
+                                        Collegiate Overwatch player, where I developed skills in decision-making,
+                                        teamwork, and strategy under pressure.
+                                    </p>
+                                </li>
+                            </ul>
+
+                        </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
