@@ -43,6 +43,32 @@
             transform: scale(1.05);
         }
 
+        .carousel {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .carousel.active {
+            display: flex;
+        }
+
+        .carousel img {
+            max-width: 100%;
+            max-height: 80%;
+            display: none;
+        }
+
+        .carousel img.active {
+            display: block;
+        }
 
         .caption {
             color: white;
@@ -671,15 +697,68 @@
                                                 MySQL, Python),
                                                 Gunicorn, Flask, Nginx.
                                             </p>
-                                            <div
-                                                class="p-4 bg-gray-100 rounded-lg shadow-md hover:bg-gray-200 transition-all">
-
-                                                <a href="/blog/post-5.html"
-                                                    class="text-lg font-medium text-blue-600 hover:underline flex items-center">
-                                                    <i class="fas fa-book ml-2"></i>
-                                                    &nbsp;Blog Post: My Project Journey
-                                                </a>
+                                            <div class="project" onclick="openCarousel(0)">RGBAttack Images</div>
+                                            <div id="carousel-0" class="carousel">
+                                                <img src="rg1.png" alt="Project 1 Image 1" class="active">
+                                                <img src="rg2.png" alt="Project 1 Image 2">
+                                                <img src="rg3.png" alt="Project 1 Image 3">
+                                                <img src="rg4.png" alt="Project 1 Image 4">
+                                                <img src="rg5.png" alt="Project 1 Image 5">
+                                                <img src="rg6.png" alt="Project 1 Image 6">
+                                                <img src="rg7.png" alt="Project 1 Image 7">
+                                                <div class="caption">RGBAttack</div>
+                                                <button class="arrow arrow-left"
+                                                    onclick="prevSlide(0)">&#10094;</button>
+                                                <button class="arrow arrow-right"
+                                                    onclick="nextSlide(0)">&#10095;</button>
+                                                <button class="close" onclick="closeCarousel(0)">&#10006;</button>
                                             </div>
+                                            <script>
+                                                const carousels = document.querySelectorAll('.carousel');
+                                                const captions = [
+                                                    [
+                                                        "First Step of a Search",
+                                                        "Immediate search results include found images of the target, and image metadata",
+                                                        "Connected nodes represent faces found from images where target is discovered",
+                                                        "After selecting a face that target was found with, we recursively search to find more info about this connection to the target.",
+                                                        "Graph State After Several Searches",
+                                                        "To export our findings, we programmatically create a .xlsx sheet that includes data on the searches, including the relationships between the searches, the sites where the images were found, metadata on the images, and notes on the searches.",
+                                                        "About Page"
+                                                    ]
+                                                ];
+                                                function openCarousel(index) {
+                                                    carousels[index].classList.add('active');
+                                                }
+
+                                                function closeCarousel(index) {
+                                                    carousels[index].classList.remove('active');
+                                                }
+
+                                                function showSlide(carouselIndex, slideIndex) {
+                                                    const images = carousels[carouselIndex].querySelectorAll('img');
+                                                    const caption = carousels[carouselIndex].querySelector('.caption');
+                                                    images.forEach((img, i) => img.classList.remove('active'));
+                                                    images[slideIndex].classList.add('active');
+                                                    caption.textContent = captions[carouselIndex][slideIndex];
+                                                }
+
+                                                function nextSlide(index) {
+                                                    const images = carousels[index].querySelectorAll('img');
+                                                    const currentIndex = Array.from(images).findIndex(img =>
+                                                        img.classList.contains('active'));
+                                                    const nextIndex = (currentIndex + 1) % images.length;
+                                                    showSlide(index, nextIndex);
+                                                }
+
+                                                function prevSlide(index) {
+                                                    const images = carousels[index].querySelectorAll('img');
+                                                    const currentIndex = Array.from(images).findIndex(img =>
+                                                        img.classList.contains('active'));
+                                                    const prevIndex = (currentIndex - 1 + images.length) % images.length;
+                                                    showSlide(index, prevIndex);
+                                                }
+                                            </script>
+
 
 
                                         </div>
