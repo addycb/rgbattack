@@ -534,6 +534,76 @@
                         </script>
 
                         <main class="sc-eCstlR dHaRVu">
+                            <article class="prose lg:prose-xl mx-auto p-6 bg-white shadow-md rounded-lg">
+                                <h1 class="text-4xl font-bold text-gray-900">crouching tiger, <br>hidden keeper</h1>
+                                <div class="mt-4 p-4 bg-gray-100 border-l-4 border-gray-500 text-gray-700 italic">
+                                    <p><strong>Note:</strong> I originally wrote this for a "what is the most creative way you've solved a problem?" prompt. It has been nominally edited since then.</p>
+                                </div>
+                                <p class="text-gray-700 mt-4">
+                                  I think <strong>RGBAttack</strong>, or <em>Relationship Graph Based Attack</em>, is the most creative solution I've had in recent memory. It originally came about when a New York friend of mine was opening a tattoo studio named <strong>Cat Scratch Studio</strong>. She wanted the Instagram username 
+                                  <a href="https://www.instagram.com/catscratch" target="_blank" rel="noopener noreferrer">@catscratch</a>, 
+                                  but sadly, this account appeared inactive or abandoned, with no signs of life since 2011.
+                                </p>
+                              
+                                <p class="text-gray-700 mt-4">
+                                  We had a problem: a desirable handle tied to an account with no visible contact info. What were we to do?
+                                </p>
+                              
+                                <p class="text-gray-700 mt-4">
+                                  To understand the situation better, let me digress a bit. By the time my friend contacted me, I had already discovered that the popular facial recognition search engine 
+                                  <a href="https://pimeyes.com/en" target="_blank" rel="noopener noreferrer">PimEyes</a> 
+                                  was leaking premium search result data through the URL parameters of its free-tier search results (I love base64). PimEyes describes its service as “an online face search engine that goes through the Internet to find pictures containing given faces.”
+                                </p>
+                              
+                                <p class="text-gray-700 mt-4">
+                                  After attempting responsible disclosure to PimEyes for months with no response, I published the poor data obfuscation here: 
+                                  <a href="https://github.com/addycb/Pimeyes-Free-POC" target="_blank" rel="noopener noreferrer">Pimeyes-Free-POC on GitHub</a>. 
+                                  (Note: This has since been patched.)
+                                </p>
+                              
+                                <p class="text-gray-700 mt-4">
+                                  Unfortunately, this alone wasn’t enough. Although the account contained a few pictures of people, they didn’t return results on PimEyes. Still, some of the old users that had interacted with the account were findable. That led us to other anonymous, abandoned accounts, such as on Tumblr.
+                                </p>
+                              
+                                <p class="text-gray-700 mt-4">
+                                  The problem now became finding the identities of people in pictures with those contacts—i.e., their second-degree connections. As you can imagine, this quickly turned into a graph traversal problem.
+                                </p>
+                              
+                                <p class="text-gray-700 mt-4">
+                                  Even with a custom client to better leverage PimEyes' API, the complexity became overwhelming. Manually researching friends-of-friends-of-friends was tedious and unreliable—especially when any link in the chain might be a dead end.
+                                </p>
+                              
+                                <p class="text-gray-700 mt-4">
+                                  So I built a system to manage the search for me.
+                                </p>
+                              
+                                <p class="text-gray-700 mt-4">
+                                  That became <strong>RGBAttack</strong>, or <em>Relationship Graph Based Attack</em>. The full code is available here: 
+                                  <a href="https://github.com/addycb/facefinder-public" target="_blank" rel="noopener noreferrer">facefinder-public on GitHub</a>. 
+                                  You can also preview the interface and outputs on my website at 
+                                  <a href="https://bdayatk.com" target="_blank" rel="noopener noreferrer">bdayatk.com</a> under Projects &rarr; RGBAttack.
+                                </p>
+                              
+                                <p class="text-gray-700 mt-4">
+                                  RGBAttack supports recursive facial recognition search using an OpenCV model, image metadata extraction, and relationship graph notes. It even allows you to export the data as an Excel <code>.xlsx</code> file for offline analysis.
+                                </p>
+                              
+                                <p class="text-gray-700 mt-4">
+                                  Using it, we found someone who could connect us to the original owner of @catscratch via an old Facebook account. Sadly, they no longer had access to it—and didn’t want to go through Instagram support to recover it. Fair enough. That’s human.
+                                </p>
+                              
+                                <p class="text-gray-700 mt-4">
+                                  RGBAttack began as a fun side project with a specific goal, but it became a demonstration of how creative thinking, tooling, and persistence can uncover non-obvious connections. While the @catscratch handle remains elusive, the journey proved that systems thinking and automation can turn an impossible task into a solvable challenge.
+                                </p>
+                              
+                                <p class="text-gray-700 mt-4">
+                                  That’s the mindset I bring to every domain I work on—whether that’s security, health tech, or beyond. If nothing else, I hope this leaves you thinking about dead ends. With enough creativity and structure, even dead ends can lead somewhere interesting.
+                                </p>
+                              
+                                <p class="text-gray-700 mt-4">
+                                  And who knows? Catscratch might just be one of them.
+                                </p>
+                              </article>
                             <div class="flex justify-between items-center p-4 text-white border-box">
                                 <a href="/blog/post-1.html" class="px-4 py-2  rounded">&lt;</a>
                                 <a href="/blog.html" class="p-2  rounded-md flex items-center justify-center">
