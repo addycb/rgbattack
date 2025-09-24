@@ -788,6 +788,34 @@ execution for case management workflows.
                                                     showSlide(index, prevIndex);
                                                 }
                                             </script>
+                                            <script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Only run if URL hash is "#rgb"
+    if (window.location.hash === '#rgb') {
+        // Find the RGBAttack button
+        const buttons = document.querySelectorAll('button');
+        let rgbaButton = null;
+        buttons.forEach(btn => {
+            if (btn.textContent.includes('📸🕵️‍♂️ RGBAttack')) rgbaButton = btn;
+        });
+        if (!rgbaButton) return;
+
+        const content = rgbaButton.nextElementSibling;
+
+        // Open the accordion if it's closed
+        if (content.classList.contains('hidden')) {
+            content.classList.remove('hidden');
+            const icon = rgbaButton.querySelector('.icon');
+            if (icon) icon.classList.toggle('rotate-180');
+        }
+
+        // Scroll into view after a tiny delay to ensure visibility
+        setTimeout(() => {
+            rgbaButton.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 50);
+    }
+});
+</script>
                                             <div class="mt-4">
                                             </div>
 
