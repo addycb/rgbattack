@@ -590,52 +590,28 @@
                                                 <div class="content p-4 border-t hidden">
                                                     <a href="https://talamel.com/" target="_blank">Talamel Site</a>
                                                     <ul class="list-disc pl-5">
-                                                         <li>Contributed to an undisclosed product focused on filling a
+                                                        <li>Contributed to an undisclosed product focused on filling a
                                                             critical healthcare niche, designing and developing key
                                                             parts of the site using Elixir and Phoenix LiveView.</li>
-                            <li>                          Designed and migrated multi-tenant PostgreSQL schemas with strict data constraints to ensure reliable isolation
-between healthcare organizations.</li>
-<li>Tuned Ecto queries for efficient reads and writes, leveraging Phoenix Telemetry to monitor query performance and
-support scalable operation under growing data volumes and concurrent users.</li>
-<li>Built and maintained backend APIs for user management and search functionality, ensuring secure access control,
-validated schemas, and reliable data integration across services.</li>
-<li>Implemented real-time favoriting and dashboard features with Phoenix LiveView, translating Figma designs into
-interactive components and optimizing state handling for responsive user workflows.</li>
-<li>Followed branch-based development workflows to ensure safe rollouts, code review, and collaborative feature
-integration across the team.</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <!-- Alcea Surrogacy Experience Accordion -->
-                                            <div class="border border-gray-200 rounded-lg overflow-hidden mb-4">
-                                                <button
-                                                    class="w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-200 focus:outline-none"
-                                                    data-accordion="2">
-                                                    <h3 class="text-sm font-semibold">IT Support & Security Consultant
-                                                    </h3>
-                                                    <p>Alcea Surrogacy <br>Dec 2023 – Aug 2024</p>
-                                                    <span
-                                                        class="icon transform transition-transform duration-300">▼</span>
-                                                </button>
-                                                <div class="content p-4 border-t hidden">
-                                                    <a href="https://alceasurrogacy.com/" target="_blank">Alcea
-                                                        Surrogacy Website</a>
-                                                    <ul class="list-disc pl-5">
-                                                        <li> Built and deployed a Flask-based web server hosting Python automation tools, containerized in Docker and served
-via a load-balanced web server on AWS EC2, enabling multi-user browser access with isolated, fault-tolerant
-execution for case management workflows.
-                                                        </li>
-                                                        <li>Audited and improved authentication workflows, including SSO
-                                                            account setups, device-level permissions, and shared access
-                                                            policies.</li>
-                                                        <li>Documented support procedures and recurring technical
-                                                            issues, helping standardize internal knowledge.</li>
-                                                        <li>Identified gaps in tooling and processes, contributing
-                                                            suggestions that improved reliability and triage workflows.
-                                                        </li>
-                                                        <li>Coordinated with leadership on tech decisions and
-                                                            communicated complex technical topics to non-technical
-                                                            users.</li>
+                                                        <li> Designed and migrated multi-tenant PostgreSQL schemas with
+                                                            strict data constraints to ensure reliable isolation
+                                                            between healthcare organizations.</li>
+                                                        <li>Tuned Ecto queries for efficient reads and writes,
+                                                            leveraging Phoenix Telemetry to monitor query performance
+                                                            and
+                                                            support scalable operation under growing data volumes and
+                                                            concurrent users.</li>
+                                                        <li>Built and maintained backend APIs for user management and
+                                                            search functionality, ensuring secure access control,
+                                                            validated schemas, and reliable data integration across
+                                                            services.</li>
+                                                        <li>Implemented real-time favoriting and dashboard features with
+                                                            Phoenix LiveView, translating Figma designs into
+                                                            interactive components and optimizing state handling for
+                                                            responsive user workflows.</li>
+                                                        <li>Followed branch-based development workflows to ensure safe
+                                                            rollouts, code review, and collaborative feature
+                                                            integration across the team.</li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -790,33 +766,33 @@ execution for case management workflows.
                                                 }
                                             </script>
                                             <script>
-document.addEventListener('DOMContentLoaded', () => {
-    // Only run if URL hash is "#rgb"
-    if (window.location.hash === '#rgb') {
-        // Find the RGBAttack button
-        const buttons = document.querySelectorAll('button');
-        let rgbaButton = null;
-        buttons.forEach(btn => {
-            if (btn.textContent.includes('📸🕵️‍♂️ RGBAttack')) rgbaButton = btn;
-        });
-        if (!rgbaButton) return;
+                                                document.addEventListener('DOMContentLoaded', () => {
+                                                    // Only run if URL hash is "#rgb"
+                                                    if (window.location.hash === '#rgb') {
+                                                        // Find the RGBAttack button
+                                                        const buttons = document.querySelectorAll('button');
+                                                        let rgbaButton = null;
+                                                        buttons.forEach(btn => {
+                                                            if (btn.textContent.includes('📸🕵️‍♂️ RGBAttack')) rgbaButton = btn;
+                                                        });
+                                                        if (!rgbaButton) return;
 
-        const content = rgbaButton.nextElementSibling;
+                                                        const content = rgbaButton.nextElementSibling;
 
-        // Open the accordion if it's closed
-        if (content.classList.contains('hidden')) {
-            content.classList.remove('hidden');
-            const icon = rgbaButton.querySelector('.icon');
-            if (icon) icon.classList.toggle('rotate-180');
-        }
+                                                        // Open the accordion if it's closed
+                                                        if (content.classList.contains('hidden')) {
+                                                            content.classList.remove('hidden');
+                                                            const icon = rgbaButton.querySelector('.icon');
+                                                            if (icon) icon.classList.toggle('rotate-180');
+                                                        }
 
-        // Scroll into view after a tiny delay to ensure visibility
-        setTimeout(() => {
-            rgbaButton.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 50);
-    }
-});
-</script>
+                                                        // Scroll into view after a tiny delay to ensure visibility
+                                                        setTimeout(() => {
+                                                            rgbaButton.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                                        }, 50);
+                                                    }
+                                                });
+                                            </script>
                                             <div class="mt-4">
                                             </div>
 
